@@ -96,7 +96,8 @@ class CertificateCheckDelegate: NSObject, URLSessionDelegate {
      */
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         guard let serverTrust = challenge.protectionSpace.serverTrust,
-              let certificate = SecTrustGetCertificateAtIndex(serverTrust, 0) else {
+                  let certificateChain = SecTrustCopyCertificateChain(serverTrust) as? [SecCertificate],
+                  let certificate = certificateChain.first else {
             completion(false, "", "")
             completionHandler(.cancelAuthenticationChallenge, nil)
             return
