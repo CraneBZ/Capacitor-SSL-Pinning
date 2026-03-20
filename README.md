@@ -1,7 +1,9 @@
 # Capacitor SSL Pinning
 
-Ionic Capacitor Plugin to perform SSL certificate checking/pinning.  
-This plugin validates the SHA256 fingerprint of a server's SSL certificate and compares it to a provided fingerprint.  
+> **Capacitor 8 support** - as of v0.0.15 this plugin supports Capacitor 8
+
+Ionic Capacitor Plugin to perform SSL certificate checking/pinning.
+This plugin validates the SHA256 fingerprint of a server's SSL certificate and compares it to a provided fingerprint.
 On Android, the plugin also provides additional certificate information.
 
 This software implements SSL (Secure Sockets Layer) pinning as a security measure. It is provided under the MIT License. The SSL pinning code included in this project is provided "as is" without any warranty, express or implied.
